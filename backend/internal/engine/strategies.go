@@ -194,7 +194,7 @@ func (e *PromoEngine) calculateFullReductionDiscount(rule *models.PromoRule, res
 func (e *PromoEngine) calculateDiscountDiscount(rule *models.PromoRule, result *models.CalculationResult) float64 {
 	discountRate, ok := rule.Config["discount_rate"].(float64)
 	if !ok {
-		discountRate = 0
+		return 0
 	}
 	
 	totalDiscount := 0.0
